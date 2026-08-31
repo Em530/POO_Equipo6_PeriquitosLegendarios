@@ -1,5 +1,7 @@
 
-/**
+/**Práctica 1:
+Codigo 1.
+Código realizado por: Corona Palacios Diego André, De la Cruz Flores Natalia Michelle, Hernández Moreno Emiliano, Martinez Barrios Aarón Rodrigo.
  * Programa para saber la estacion del año con respecto
  *  al mes seleccionado por el usuario.
  */
