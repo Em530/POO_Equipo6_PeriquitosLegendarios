@@ -28,6 +28,7 @@ public class Edades {
          } else { //si el usuario escribio un valor diferente a int se imprime el mensaje de error
             System.out.println("Ups, debes ingresar un numero entero valido:)");
           } 
+         leer.close();//Cerramos el objeto de la clase Scanner para liberar recursos.
    }
 } 
        
