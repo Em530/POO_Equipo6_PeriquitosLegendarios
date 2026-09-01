@@ -1,6 +1,9 @@
 /** Práctica 1: Entorno y lenguaje de programación
  * Código: Calculadora Básica (Operaciones).
- * Código realizado por: Corona Palacios Diego André.
+ * Código realizado por: Corona Palacios Diego André,
+ * De la Cruz Flores Natalia Michelle,
+ * Hernández Moreno Emiliano, 
+ * Martinez Barrios Aarón Rodrigo.
  * Programa para realizar suma, resta, multiplicación y división 
  * validando los datos ingresados por el usuario.
  */
