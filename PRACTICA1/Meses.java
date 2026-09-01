@@ -113,7 +113,9 @@ public class Meses{
                     System.out.println("\n\tEl mes seleccionado es DICIEMBRE y es Invierno");
                 }
                 break;
-
+            /**Si el usuario elige una opcion fuera del rango de los casos en switch se 
+                 imprimira el siguiente texto y se acabara el programa
+            */
             default:
                 System.out.println("\n\tEl mes seleccionado NO ES VALIDO");
                 break;
