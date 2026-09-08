@@ -1,4 +1,13 @@
-
+ /** Práctica 2: Fundamentos y sintaxis del lenguaje
+ * Código: Registro de alumnos
+ * Código realizado por: Corona Palacios Diego André,
+ * De la Cruz Flores Natalia Michelle,
+ * Hernández Moreno Emiliano, 
+ * Martinez Barrios Aarón Rodrigo.
+ * Programa para realizar el registro de alumnos, 
+ * donde se solicita al usuario ingresar los datos de cada alumno
+ * y posteriormente se muestran en pantalla.
+ */
 public class Alumno {
     /**
      * Atributos
