@@ -1,6 +1,12 @@
+/** Práctica 1:Fundamentos y sintaxis del lenguaje
+ * main del programa para realizar el registro de alumnos
+ **/
+
 import java.util.Scanner;
 
-public static void main(String[] args) {
+public class Main {
+    public static void main(String[] args) {
+        
     Alumno [] alumnos = new Alumno[10];
 
     alumnos[0]  = new Alumno(20, 8.5f, "Pedro", "3er Semestre", "H");
@@ -25,13 +31,30 @@ public static void main(String[] args) {
         alumnos[i].setSemestre(semestre);
         //sc.next();
 
+        boolean edadValida = false;
+        while(!edadValida) {
         System.out.println("Por favor proporcione la edad del alumno: ");
         edad = sc.nextInt();
-        alumnos[i].setEdad(edad);
+        if (edad >= 0 && edad <= 100){
+             alumnos[i].setEdad(edad);
+             edadValida = true;
+        }else{
+            System.out.println("Edad no valida, por favor ingrese una edad entre 0 y 100");
+            }
+        } 
+        
 
+        boolean promedioValido = false;
+        while(!promedioValido){
         System.out.println("Por favor proporcione el promedio del alumno: ");
         promedio = sc.nextFloat();
-        alumnos[i].setPromedio(promedio);
+        if (promedio >= 0.0f && promedio <= 10.0f){
+            alumnos[i].setPromedio(promedio);
+            promedioValido = true;
+        }else{
+            System.out.println("Promedio no valido, por favor ingrese un promedio entre 0.0 y 10.0");
+            }
+        }
 
         boolean sexoValido = false;
         while(!sexoValido){
@@ -48,6 +71,7 @@ public static void main(String[] args) {
             System.out.println("Sexo no valido, por favor ingrese H/h o M/m");
             }
         }
+
         i++;
     }
 
@@ -59,5 +83,7 @@ public static void main(String[] args) {
         System.out.println("Promedio: "+alumnos[j].getPromedio());
         System.out.println("Sexo: "+alumnos[j].getSexo());
     }
+    
     sc.close();
+    }
 }
