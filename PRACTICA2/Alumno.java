@@ -1,5 +1,5 @@
- /** Práctica 2: Fundamentos y sintaxis del lenguaje
- * Código: Registro de alumnos
+/** Práctica 2: Fundamentos y sintaxis del lenguaje
+ * Código1: Registro de alumnos
  * Código realizado por: Corona Palacios Diego André,
  * De la Cruz Flores Natalia Michelle,
  * Hernández Moreno Emiliano, 
