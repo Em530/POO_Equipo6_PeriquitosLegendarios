@@ -90,9 +90,9 @@ public class Main2{//Clase principal del programa
             }catch(Exception e){
                 System.out.println("Entrada no valida, por favor ingrese un valor numerico");
                 scanner.nextLine();
-             }
             }
-         
+            }
+    
 
             i++;
         }while(i<10);//Cierre del ciclo para registrar los datos de las computadoras
