@@ -50,8 +50,8 @@ public class Main { //Clase principal del programa
         System.out.println("Por favor proporcione el promedio del alumno: ");
         promedio = sc.nextFloat();
         if (promedio >= 0.0f && promedio <= 10.0f){
-            alumnos[i].setPromedio(promedio);
-            promedioValido = true;
+           alumnos[i].setPromedio(promedio);
+           promedioValido = true;
         }else{
             System.out.println("Promedio no valido, por favor ingrese un promedio entre 0.0 y 10.0");
             }
