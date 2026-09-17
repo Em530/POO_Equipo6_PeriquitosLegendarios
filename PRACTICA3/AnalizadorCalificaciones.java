@@ -92,14 +92,14 @@ public class AnalizadorCalificaciones {
         double promedio = suma / calificaciones.size();
 
         // Math
-        double raizPromedio = Math.sqrt(promedio);
+        long redondeado = Math.round(promedio);
 
         System.out.println("\n===== RESULTADOS =====");
 
         System.out.println("Calificacion mayor: " + mayor);
         System.out.println("Calificacion menor: " + menor);
         System.out.println("Promedio: " + promedio);
-        System.out.println("Raiz cuadrada del promedio: " + raizPromedio);
+        System.out.println("Promedio en acta: " + redondeado);
 
         sc.close();
     }
