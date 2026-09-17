@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.Date;
 import java.util.Calendar;
 
-public class mensajeDedicatoria {
+public class MensajeDedicatoria {
 
     public static void main(String[] args) {
 
