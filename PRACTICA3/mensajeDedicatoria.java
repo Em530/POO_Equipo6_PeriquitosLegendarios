@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Date;
 import java.util.Calendar;
 
-public class fechaHoy {
+public class mensajeDedicatoria {
 
     public static void main(String[] args) {
 
