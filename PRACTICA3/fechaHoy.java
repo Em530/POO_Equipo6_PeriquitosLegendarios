@@ -27,7 +27,7 @@ public class fechaHoy {
 
         // StringBuffer: modificar el mensaje
         StringBuffer resultado = new StringBuffer(mensaje.toString());
-        resultado.append("\n¡Que tengas un excelente día!");
+        resultado.append("\n Se feliz en este maravilloso día, recuerda hoy estamos, mañana quien sabe");
 
         System.out.println(resultado);
     }
