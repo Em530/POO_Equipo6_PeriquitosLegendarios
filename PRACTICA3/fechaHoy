@@ -1,7 +1,7 @@
 import java.util.Date;
 import java.util.Calendar;
 
-public class Programa3 {
+public class fechaHoy {
 
     public static void main(String[] args) {
 
