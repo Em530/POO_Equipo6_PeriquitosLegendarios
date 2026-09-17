@@ -17,7 +17,7 @@ public class mensajeDedicatoria {
             
             if (nombre.isEmpty()) {
                 System.out.println("El nombre no puede estar vacio");
-            } else if (!nombre.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
+            } else if (!nombre.matches("[\\p{L} ]+")) {
                 System.out.println("El nombre solo puede contener letras y espacios.");
             } else {
                 break;
