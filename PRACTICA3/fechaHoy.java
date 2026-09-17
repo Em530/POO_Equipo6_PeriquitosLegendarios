@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.Date;
 import java.util.Calendar;
 
@@ -5,30 +6,69 @@ public class fechaHoy {
 
     public static void main(String[] args) {
 
-        // Date: obtener la fecha actual
-        Date fecha = new Date();
+        Scanner entrada = new Scanner(System.in);
 
-        // Calendar: obtener y modificar la fecha
+        // Nombre
+        System.out.print("Ingresa tu nombre: ");
+        String nombre = entrada.nextLine();
+
+        // Año de nacimiento
+        int añoNacimiento;
+
+        while (true) {
+            System.out.print("Ingresa tu año de nacimiento: ");
+
+            if (entrada.hasNextInt()) {
+                añoNacimiento = entrada.nextInt();
+
+                if (añoNacimiento >= 1920 && añoNacimiento <= 2026) {
+                    break;
+                } else {
+                    System.out.println("Ingresa un año válido.");
+                }
+
+            } else {
+                System.out.println("Debes ingresar un número.");
+                entrada.next();
+            }
+        }
+
+        entrada.nextLine();
+
+        // Mensaje
+        System.out.print("Escribe un mensaje: ");
+        String texto = entrada.nextLine();
+
+        // Date
+        Date fechaActual = new Date();
+
+        // Calendar
         Calendar calendario = Calendar.getInstance();
-        calendario.setTime(fecha);
+        calendario.setTime(fechaActual);
 
         int dia = calendario.get(Calendar.DAY_OF_MONTH);
         int mes = calendario.get(Calendar.MONTH) + 1;
         int año = calendario.get(Calendar.YEAR);
 
-        // StringBuilder: construir un mensaje
+        // StringBuilder
         StringBuilder mensaje = new StringBuilder();
-        mensaje.append("Fecha actual: ");
-        mensaje.append(dia);
-        mensaje.append("/");
-        mensaje.append(mes);
-        mensaje.append("/");
+
+        mensaje.append("\n===== INFORMACIÓN =====\n");
+        mensaje.append("Nombre: ").append(nombre);
+        mensaje.append("\nAño de nacimiento: ").append(añoNacimiento);
+        mensaje.append("\nFecha actual: ");
+        mensaje.append(dia).append("/");
+        mensaje.append(mes).append("/");
         mensaje.append(año);
 
-        // StringBuffer: modificar el mensaje
-        StringBuffer resultado = new StringBuffer(mensaje.toString());
-        resultado.append("\n Se feliz en este maravilloso día, recuerda hoy estamos, mañana quien sabe");
+        // StringBuffer
+        StringBuffer resultado = new StringBuffer(mensaje);
+
+        resultado.append("\nMensaje: ");
+        resultado.append(texto);
 
         System.out.println(resultado);
+
+        entrada.close();
     }
 }
