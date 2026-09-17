@@ -9,15 +9,28 @@ public class fechaHoy {
         Scanner entrada = new Scanner(System.in);
 
         // Nombre
-        System.out.print("Ingresa tu nombre: ");
-        String nombre = entrada.nextLine();
+        String nombre;
 
+        while (true) {
+            System.out.print("Ingresa tu nombre: ");
+            nombre = entrada.nextLine().trim(); 
+            
+            if (nombre.isEmpty()) {
+                System.out.println("El nombre no puede estar vacio");
+            } else if (!nombre.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
+                System.out.println("El nombre solo puede contener letras y espacios.");
+            } else {
+                break;
+            }
+        }
+
+        
         // Año de nacimiento
         int añoNacimiento;
 
         while (true) {
             System.out.print("Ingresa tu año de nacimiento: ");
-
+            
             if (entrada.hasNextInt()) {
                 añoNacimiento = entrada.nextInt();
 
