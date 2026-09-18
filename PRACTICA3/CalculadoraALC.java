@@ -1,4 +1,6 @@
 /** Práctica 3: Utilerías y clases de uso general
+ * Código 1: El siguiente código genera la suma, resta, multiplicación, división,
+ * indica el mayor, el menor y la raiz de ambos numeros que fuerón proporcionados por el usuario.
  * Código realizado por: Corona Palacios Diego André,
  * De la Cruz Flores Natalia Michelle,
  * Hernández Moreno Emiliano, 
