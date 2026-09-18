@@ -1,3 +1,11 @@
+/** Práctica 3: Programa 2 Listas
+ * Usando el LinkedList, For-each, Wrappers, Autoboxing y manejar lista usando LikedList y recorrerá con For-each.
+ * Código realizado por: 
+ * Corona Palacios Diego André,
+ * De la Cruz Flores Natalia Michelle,
+ * Hernández Moreno Emiliano, 
+ * Martinez Barrios Aarón Rodrigo.
+ */
 import java.util.LinkedList;
 import java.util.Scanner;
 
