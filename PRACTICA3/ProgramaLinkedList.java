@@ -1,5 +1,7 @@
 /** Práctica 3: Programa 2 Listas
- * Usando el LinkedList, For-each, Wrappers, Autoboxing y manejar lista usando LikedList y recorrerá con For-each.
+ * Código 3: El siguiente programa realiza una lista con los numeros
+ * dados por el usuario, hasta que el mismo decida el fin de la lista,
+ * regresa la lista de numeros y la suma de todos sus elementos.
  * Código realizado por: 
  * Corona Palacios Diego André,
  * De la Cruz Flores Natalia Michelle,
