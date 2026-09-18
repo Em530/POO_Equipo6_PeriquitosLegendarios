@@ -13,7 +13,7 @@ public class ProgramaLinkedList {
         System.out.println("Ingresa números enteros para agregar a la lista.");
         System.out.println("Escribe 'fin' cuando quieras terminar.\n");
 
-        // Ciclo infinito controlado para evitar que el profe rompa el programa
+        // Ciclo infinito controlado para evitar que se llegue a "romper" el programa
         while (true) {
             System.out.print("Ingresa un número: ");
             String entrada = scanner.nextLine().trim(); // Leemos como texto y quitamos espacios extra
@@ -33,7 +33,7 @@ public class ProgramaLinkedList {
                 listaNumeros.add(numeroPrimitivo);
                 
             } catch (NumberFormatException e) {
-                // ¡Aquí evitamos que el profe rompa el programa!
+                // Aquí evitamos el programa se pueda romper wwww
                 // Si ingresa letras, decimales o símbolos, el programa entra aquí en lugar de cerrarse con error.
                 System.out.println("--> ERROR: '" + entrada + "' no es un número entero válido. Intenta de nuevo.");
             }
