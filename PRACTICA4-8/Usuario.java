@@ -4,8 +4,7 @@
  * De la Cruz Flores Natalia Michelle,
  * Hernández Moreno Emiliano, 
  * Martinez Barrios Aarón Rodrigo.
- * Programa para la creación de una clase hija de PersonaP4
- * utilizando Vapara la creación de una clase hija de PersonaP4
+ * Programa que hereda los metodos de la clase padre
  * utilizando Varios constructores y definiendo los metodos de la clase padre y la clase hija
  * usando varios constructores y definiendo los metodos de la clase padre y la clase hija. 
  */
