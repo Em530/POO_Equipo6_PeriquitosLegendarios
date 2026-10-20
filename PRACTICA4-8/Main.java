@@ -71,8 +71,10 @@ public class Main {
                         String correoBib = entrada.nextLine().trim();
                         System.out.print("Turno (Matutino/Vespertino): ");
                         String turnoBib = entrada.nextLine().trim();
+                        System.out.print("Sueldo: ");
+                        Double sueldoBib = Double.parseDouble(entrada.nextLine().trim());
                         
-                        miBiblioteca.agregarPersona(new Bibliotecario(idBib, nomBib, correoBib, turnoBib));
+                        miBiblioteca.agregarPersona(new Bibliotecario(idBib, nomBib, correoBib, turnoBib, turnoBib));
                     } catch (NumberFormatException e) {
                         System.out.println("Error: El ID debe ser un número entero.");
                     }
