@@ -19,10 +19,7 @@ public class Libro {
     private static int totalLibros = 0;
 
     // 6.3 Constructores (Sobrecarga)
-    public Libro() {
-        this.disponible = true;
-        totalLibros++; // Incrementa el contador global
-    }
+    public Libro() {}
 
     public Libro(String titulo, String autor) {
         this.titulo = titulo;
@@ -48,9 +45,9 @@ public class Libro {
     public void prestar() {
         if (disponible) {
             disponible = false;
-            System.out.println("Éxito: El libro '" + titulo + "' ha sido prestado.");
+            System.out.println("Éxito: El libro " + titulo + "' ha sido prestado.");
         } else {
-            System.out.println("Error: El libro '" + titulo + "' ya se encuentra prestado.");
+            System.out.println("Error: El libro " + titulo + "' ya se encuentra prestado.");
         }
     }
 
@@ -59,7 +56,7 @@ public class Libro {
             disponible = true;
             System.out.println("Éxito: El libro '" + titulo + "' ha sido devuelto al catálogo.");
         } else {
-            System.out.println("Aviso: El libro '" + titulo + "' ya estaba disponible.");
+            System.out.println("Aviso: El libro  '" + titulo + "' ya estaba disponible.");
         }
     }
 
