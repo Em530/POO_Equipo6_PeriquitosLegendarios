@@ -99,6 +99,40 @@ public class Biblioteca {
         }
     }
 
+    public void registrarBibliotecario(Bibliotecario bibliotecario){
+        for (Bibliotecario empleado : empleados){
+            if (empleado.getId() == bibliotecario.getId()){
+                System.out.println("Ya existe un empleado con ese ID.");
+                return;
+            }
+        }
+
+        empleados.add(bibliotecario);
+        System.out.println("Empleado registrado correctamente.");
+
+    }
+
+    public void mostrarBibliotecarios(){
+        if (empleados.isEmpty()){
+            System.out.println("No hay empleados registrados.");
+        } else{
+            for (Bibliotecario bibliotecario : empleados){
+                bibliotecario.mostrarInformacion();
+            }
+        }
+    }
+
+    public Prestamo buscarPrestamo(String isbn){
+        for (Prestamo prestamo : prestamos){
+            if (prestamo.estaActivo() && prestamo.getLibro() != null &&
+                prestamo.getLibro().getIsbn() != null && prestamo.getLibro().getIsbn().equalsIgnoreCase(isbn)){
+                    return prestamo;
+                }
+        }
+
+        return null;
+    }
+
     public void realizarPrestamo(Usuario usuario, Libro libro){
         if (! libro.estaDisponible()){
             System.out.println("El libro no esta disponible por el momento.");
