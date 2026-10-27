@@ -8,8 +8,17 @@
  */
 
 import java.util.Scanner;
-
+/**
+ * Clase principal que gestiona la interfaz de usuario mediante consola
+ * para el sistema de biblioteca, implementando un menú interactivo con validaciones.
+ */
 public class MainP4 {
+    /**
+ * Método principal que ejecuta el ciclo del menú interactivo del sistema,
+ * permitiendo registrar elementos, realizar operaciones de préstamo y consultar catálogos.
+ * 
+ * @param args Argumentos de la línea de comandos.
+ */
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         Biblioteca biblioteca = new Biblioteca();
