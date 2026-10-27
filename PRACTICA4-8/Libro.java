@@ -6,7 +6,7 @@
  * Martinez Barrios Aarón Rodrigo.
  * Programa que modela un libro físico, aplicando sobrecarga y variables estáticas.
  */
-public class Libro {
+public class Libro implements Prestable {
     
     // 6.1 Atributos
     private String isbn;
@@ -42,6 +42,7 @@ public class Libro {
         return disponible;
     }
 
+    @Override
     public void prestar() {
         if (disponible) {
             disponible = false;
@@ -51,6 +52,7 @@ public class Libro {
         }
     }
 
+    @Override
     public void devolver() {
         if (!disponible) {
             disponible = true;
