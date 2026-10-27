@@ -7,20 +7,31 @@
  * Programa que engloba toda la biblioteca y los "sub"-programas que ya hicimos. 
  */
 import java.util.ArrayList;
-
+/**
+ * Clase que representa el sistema central de la biblioteca.
+ * Administra colecciones de libros, usuarios, empleados bibliotecarios y préstamos.
+ */
 public class Biblioteca {
     private ArrayList<Libro> libros;
     private ArrayList<Usuario> usuarios;
     private ArrayList<Bibliotecario> empleados;
     private ArrayList<Prestamo> prestamos;
-
+/**
+ * Constructor por defecto que inicializa las listas de libros, usuarios,
+ * empleados y préstamos de la biblioteca.
+ */
     public Biblioteca() {
         this.libros = new ArrayList<>();
         this.usuarios = new ArrayList<>();
         this.empleados = new ArrayList<>();
         this.prestamos = new ArrayList<>();
     }
-
+/**
+ * Busca un libro dentro del catálogo utilizando su número ISBN.
+ * 
+ * @param isbn El código ISBN del libro a buscar.
+ * @return El objeto Libro si es encontrado, o null en caso contrario.
+ */
     //Metodos
     public Libro buscarLibro(String isbn){
         for (Libro libro : libros){
@@ -30,7 +41,13 @@ public class Biblioteca {
         }
         return null;
     }
-
+/**
+ * Busca un libro dentro del catálogo mediante su título y autor (sobrecarga de método).
+ * 
+ * @param titulo El título del libro.
+ * @param autor El autor del libro.
+ * @return El objeto Libro si coincide, o null en caso contrario.
+ */
     //Sobrecarga Metodos
     public Libro buscarLibro(String titulo, String autor){
         for (Libro libro : libros){
@@ -41,7 +58,11 @@ public class Biblioteca {
         }
         return null;
     }
-
+/**
+ * Agrega un nuevo libro al catálogo de la biblioteca si este no existe previamente.
+ * 
+ * @param libro El objeto Libro a agregar.
+ */
     public void agregarLibro(Libro libro){
         if (buscarLibro(libro.getIsbn()) != null){
             System.out.println("El libro que desea agregar ya existe.");
@@ -50,7 +71,11 @@ public class Biblioteca {
             System.out.println("Se ha agregado el libro correctamente al catalogo. ;)");
         }
     }
-
+/**
+ * Elimina un libro del catálogo basándose en su número ISBN.
+ * 
+ * @param isbn El código ISBN del libro a eliminar.
+ */
     public void eliminarLibro(String isbn){
         Libro libro = buscarLibro(isbn);
         if (libro == null){
@@ -60,7 +85,9 @@ public class Biblioteca {
             System.out.println("El libro se ha eliminado correctamente. ;)");
         }
     }
-
+/**
+ * Muestra en la consola todos los libros registrados en el catálogo de la biblioteca.
+ */
     public void mostrarCatalogo(){
         if (libros.isEmpty()){
             System.out.println("El catalogo esta vacio. :(");
@@ -70,7 +97,12 @@ public class Biblioteca {
             }
         }
     }
-
+/**
+ * Busca un usuario registrado en el sistema mediante su número de identificación único.
+ * 
+ * @param id El identificador único del usuario.
+ * @return El objeto Usuario correspondiente, o null si no se encuentra.
+ */
     public Usuario buscarUsuario(int id){
         for (Usuario usuario : usuarios){
             if (usuario.getId() == id){
@@ -79,7 +111,11 @@ public class Biblioteca {
         }
         return null;
     }
-
+/**
+ * Registra un nuevo usuario en el sistema si su ID no se encuentra registrado previamente.
+ * 
+ * @param usuario El objeto Usuario a registrar.
+ */
     public void registrarUsuario(Usuario usuario){
         if (buscarUsuario(usuario.getId()) != null){
             System.out.println("El ID del usuario que desea registrar ya se encuentra en el sistema.");
@@ -88,7 +124,9 @@ public class Biblioteca {
             System.out.println("El ID del usuario nuevo a sido registrado con exito.");
         }
     }
-
+/**
+ * Muestra en la consola la información de todos los usuarios registrados en el sistema.
+ */
     public void mostrarUsuarios(){
         if (usuarios.isEmpty()){
             System.out.println("No se han encontrado usuarios registrados en el sistema.");
@@ -98,7 +136,11 @@ public class Biblioteca {
             } 
         }
     }
-
+/**
+ * Registra un nuevo empleado bibliotecario validando que su ID no esté duplicado.
+ * 
+ * @param bibliotecario El objeto Bibliotecario a registrar.
+ */
     public void registrarBibliotecario(Bibliotecario bibliotecario){
         for (Bibliotecario empleado : empleados){
             if (empleado.getId() == bibliotecario.getId()){
@@ -111,7 +153,9 @@ public class Biblioteca {
         System.out.println("Empleado registrado correctamente.");
 
     }
-
+/**
+ * Muestra en la consola la información de todos los empleados bibliotecarios registrados.
+ */
     public void mostrarBibliotecarios(){
         if (empleados.isEmpty()){
             System.out.println("No hay empleados registrados.");
@@ -121,7 +165,12 @@ public class Biblioteca {
             }
         }
     }
-
+/**
+ * Busca un préstamo activo en la biblioteca asociado al ISBN de un libro.
+ * 
+ * @param isbn El código ISBN del libro prestado.
+ * @return El objeto Prestamo activo correspondiente, o null si no existe.
+ */
     public Prestamo buscarPrestamo(String isbn){
         for (Prestamo prestamo : prestamos){
             if (prestamo.estaActivo() && prestamo.getLibro() != null &&
@@ -132,7 +181,13 @@ public class Biblioteca {
 
         return null;
     }
-
+/**
+ * Realiza el proceso de préstamo de un libro a un usuario, verificando la disponibilidad 
+ * del libro y si el usuario se encuentra activo.
+ * 
+ * @param usuario El usuario que solicita el préstamo.
+ * @param libro El libro que se desea prestar.
+ */
     public void realizarPrestamo(Usuario usuario, Libro libro){
         if (! libro.estaDisponible()){
             System.out.println("El libro no esta disponible por el momento.");
@@ -146,7 +201,11 @@ public class Biblioteca {
         prestamo.iniciarPrestamo();
         prestamos.add(prestamo);
     }
-
+/**
+ * Gestiona la devolución de un libro finalizando su préstamo correspondiente.
+ * 
+ * @param prestamo El objeto Prestamo a finalizar.
+ */
     public void devolverLibro(Prestamo prestamo){
         if (! prestamo.estaActivo()){
             System.out.println("El libro que se intenta devolver ya ha sido devuelto.");
@@ -154,7 +213,9 @@ public class Biblioteca {
             prestamo.finalizarPrestamo();
         }
     }
-
+/**
+ * Muestra en la consola el listado de todos los préstamos registrados en el sistema.
+ */
     public void mostrarPrestamos(){
         if (prestamos.isEmpty()){
             System.out.println("No hay ningun prestamo, todos los libros se encuentran seguros. :)");
