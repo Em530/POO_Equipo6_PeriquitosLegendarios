@@ -10,6 +10,7 @@
 
 // Importamos la excepción específica para detectar fechas mal escritas
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
@@ -66,6 +67,20 @@ public class Principal {
                         // Leemos la hora y limpiamos espacios
                         String hora = sc.nextLine().trim();
 
+                        try {
+
+                            DateTimeFormatter formatoHora = DateTimeFormatter.ofPattern("HH:mm")
+                                .withResolverStyle(ResolverStyle.STRICT);
+
+                            LocalTime horaEvento = LocalTime.parse(hora, formatoHora);
+
+                        } catch (DateTimeParseException e) {
+
+                        System.out.println("ERROR: La hora ingresada no es valida.");
+                        System.out.println("Ejemplo de formato correcto: 18:00");
+                        break;
+                        }
+
                         // Pedimos el nombre de la empresa o persona
                         System.out.print("Nombre de la empresa o persona que reserva: ");
                         // Leemos el nombre y eliminamos cualquier coma para no alterar las columnas del CSV
@@ -98,7 +113,7 @@ public class Principal {
             } catch (DateTimeParseException e) {
                 // Se ejecuta si el usuario escribió una fecha que no cumple el formato dd/MM/yyyy
                 System.out.println("Error: Formato de fecha inválido. Usa exactamente dd/MM/yyyy (ej. 05/12/2026).");
-            } catch (Exception e) {
+            }catch (Exception e) {
                 // Se ejecuta cuando agenda.agendarEvento lanza el error de que la fecha/hora ya está ocupada
                 System.out.println(e.getMessage());
             }
