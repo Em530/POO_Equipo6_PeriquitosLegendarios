@@ -9,8 +9,10 @@
  */
 
 // Importamos la excepción específica para detectar fechas mal escritas
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-// Importamos la clase Scanner para leer lo que el usuario escribe en el teclado
+import java.time.format.ResolverStyle;
 import java.util.Scanner;
 
 // Declaramos la clase principal que contiene el método de arranque main
@@ -45,6 +47,19 @@ public class Principal {
                         System.out.print("Ingresa la fecha (dd/MM/yyyy, ej. 25/11/2026): ");
                         // Leemos la fecha y quitamos espacios en blanco sobrantes a los lados
                         String fecha = sc.nextLine().trim();
+
+                        // Validar la fecha
+                        DateTimeFormatter formato =
+                            DateTimeFormatter.ofPattern("dd/MM/uuuu").withResolverStyle(ResolverStyle.STRICT);
+
+                        LocalDate fechaEvento = LocalDate.parse(fecha, formato);
+
+                        // Evitar fechas pasadas
+                        if (fechaEvento.isBefore(LocalDate.now())) {
+
+                            System.out.println("Error: no puedes reservar fechas pasadas.");
+                            break;
+                        }
 
                         // Pedimos la hora del evento
                         System.out.print("Ingresa la hora de inicio (HH:mm, ej. 18:00): ");
