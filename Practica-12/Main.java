@@ -11,7 +11,7 @@ public class Main {
         Auto auto6 = new Auto("Pagani", 0, carrera);
         Auto auto7 = new Auto("Lamborghini", 0, carrera);
 
-        System.out.println("\n\t\t\t\t----¡Que comience la carrera!----\n");
+        System.out.println("\n\t\t\t\t----Que comience la carrera----\n");
 
         auto1.start();
         auto2.start();
